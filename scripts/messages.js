@@ -19,7 +19,7 @@ async function startApp() {
         let text = ctx.params.text;
         messageService.postMessage(recipientName,text).then(function () {
             auth.showInfo('Message sent.');
-            displayArchive(ctx);
+            ctx.redirect('#/archive');
         }).catch(auth.handleError);
     }
     async function displayMessages(ctx) {
@@ -69,7 +69,7 @@ async function startApp() {
     function logout(ctx) {
         auth.logout().then(()=>{
             sessionStorage.clear();
-            displayHome(ctx);
+            ctx.redirect('#/home');
             auth.showInfo('Logout successful.');
         }).catch(auth.handleError);
     }
@@ -100,7 +100,7 @@ async function startApp() {
          auth.register(username,password,name).then((userInfo)=>{
              auth.saveSession(userInfo);
              auth.showInfo("User registration successful.");
-             displayHome(ctx);
+             ctx.redirect('#/home');
          }).catch(auth.handleError);
     }
     //Login section
@@ -118,7 +118,7 @@ async function startApp() {
         auth.login(username,password).then((userInfo)=>{
             auth.saveSession(userInfo);
             auth.showInfo('Login successful.');
-            displayHome(ctx);
+            ctx.redirect('#/home');
         }).catch(auth.handleError);
     }
     app.run();
