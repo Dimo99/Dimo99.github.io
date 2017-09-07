@@ -1,0 +1,17 @@
+<section id="viewDiscover">
+    <div class="content">
+        <div class="chirps">
+            <h2 class="titlebar">Discover</h2>
+            <div id="userlist">
+                {{#each userList}}
+                    <div class="userbox">
+                        <div><a href="#/userprofile?username={{name}}" class="chirp-author">{{name}}</a></div>
+                        <div class="user-details">
+                            <span>{{numberOfFollowers}} followers</span>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</section>

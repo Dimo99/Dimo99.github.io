@@ -1,22 +1,14 @@
-{{>header}}
 <section id="viewRegister">
-    <h1>Please register here</h1>
-    <form method="post" action="#/register" id="formRegister">
-        <label>
-            <div>Username:</div>
-            <input type="text" name="username" id="registerUsername" required />
-        </label>
-        <label>
-            <div>Password:</div>
-            <input type="password" name="password" id="registerPasswd" required />
-        </label>
-        <label>
-            <div>Name:</div>
-            <input type="text" name="name" id="registerName" />
-        </label>
-        <div>
-            <input type="submit" value="Register" />
-        </div>
-    </form>
+    <div class="content">
+        <form action="#/register" method="post" class="form" id="formRegister">
+            <label>Username</label>
+            <input name="username" type="text">
+            <label>Password</label>
+            <input name="password" type="password">
+            <label>Repeat Password</label>
+            <input name="repeatPass" type="password">
+            <input id="btnRegister" value="Register" type="submit">
+            <a href="#/login">Log in</a>
+        </form>
+    </div>
 </section>
-{{>footer}}

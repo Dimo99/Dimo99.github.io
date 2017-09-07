@@ -1,0 +1,34 @@
+<section id="viewMe">
+    <div class="content">
+        <div class="chirper">
+
+            <h2 class="titlebar">{{username}}</h2>
+
+            <form id="formSubmitChirpMy" action="#/feed" method="post" class="chirp-form">
+                <textarea name="text" class="chirp-input"></textarea>
+                <input class="chirp-submit" id="btnSubmitChirpMy" value="Chirp" type="submit">
+            </form>
+
+            <div id="myStats" class="user-details">
+                <span>{{chirpsCount}} chirps</span> | <span>{{followingCount}} following</span> |
+                <span>{{followersCount}} followers</span>
+            </div>
+        </div>
+
+        <div id="myChirps" class="chirps">
+            <h2 class="titlebar">Chirps</h2>
+            {{#each chirps}}
+                <article class="chirp">
+                    <div class="titlebar">
+                        <a href="#" class="chirp-author">{{username}}</a>
+                        <span class="chirp-time">{{date}}</span>
+                        <a href="#" class="chirp-delete" data-id="{{id}}">delete</a>
+                    </div>
+                    <p>{{text}}</p>
+                </article>
+            {{else}}
+                <div class="chirp"><span class="loading">No chirps in database</span></div>
+            {{/each}}
+        </div>
+    </div>
+</section>
