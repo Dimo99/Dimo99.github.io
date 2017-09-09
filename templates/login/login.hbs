@@ -1,12 +1,18 @@
+{{>header}}
 <section id="viewLogin">
-    <div class="content">
-        <form action="#/login" method="post" id="formLogin" class="form">
-            <label>Username</label>
-            <input name="username" type="text">
-            <label>Password</label>
-            <input name="password" type="password">
-            <input id="btnLogin" value="Sign In" type="submit">
-            <a href="#/register">Register</a>
-        </form>
-    </div>
+    <h1>Please login</h1>
+    <form action="#/login" method="post" id="formLogin">
+        <label>
+            <div>Username:</div>
+            <input type="text" name="username" id="loginUsername" required />
+        </label>
+        <label>
+            <div>Password:</div>
+            <input type="password" name="password" id="loginPasswd" required />
+        </label>
+        <div>
+            <input type="submit" value="Login" />
+        </div>
+    </form>
 </section>
+{{>footer}}
