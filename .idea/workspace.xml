@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="23c0670c-d52b-434b-9b6b-6e28d612e04f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/messages.html" afterPath="$PROJECT_DIR$/messages.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/messages-transpiled.js" afterPath="$PROJECT_DIR$/scripts/messages-transpiled.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/messages.js" afterPath="$PROJECT_DIR$/scripts/messages.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/jquery.emojipicker.js" afterPath="$PROJECT_DIR$/scripts/jquery.emojipicker.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,6 +33,28 @@
             <state relative-caret-position="-1273122">
               <caret line="0" column="643" lean-forward="false" selection-start-line="0" selection-start-column="643" selection-end-line="0" selection-end-column="643" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.emojis.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/jquery.emojis.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-154059">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.emojipicker.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/jquery.emojipicker.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="67" column="16" lean-forward="false" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
+              <folding>
+                <marker date="1504994719540" expanded="true" signature="14936:14949" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,18 +148,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="emoji.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/emoji-js/lib/emoji.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="21" />
-              <folding>
-                <marker date="1504961649302" expanded="true" signature="11984:12018" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
@@ -185,6 +193,7 @@
         <option value="$PROJECT_DIR$/messages.html" />
         <option value="$PROJECT_DIR$/jquery.emojipicker.css" />
         <option value="$PROJECT_DIR$/scripts/messages.js" />
+        <option value="$PROJECT_DIR$/scripts/jquery.emojipicker.js" />
       </list>
     </option>
   </component>
@@ -232,6 +241,11 @@
               <item name="Dimo99.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="Dimo99.github.io" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Dimo99.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dimo99.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -276,12 +290,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1504958649820</updated>
-      <workItem from="1504958652002" duration="8008000" />
+      <workItem from="1504958652002" duration="8930000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8008000" />
+    <option name="totallyTimeSpent" value="8930000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -443,16 +457,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/jquery.emojipicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1504980297292" expanded="true" signature="15089:15102" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/emoji-js/lib/jquery.emoji.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -461,10 +465,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jquery.emojipicker.a.css">
+    <entry file="file://$PROJECT_DIR$/scripts/messages.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1273122">
-          <caret line="0" column="643" lean-forward="false" selection-start-line="0" selection-start-column="643" selection-end-line="0" selection-end-column="643" />
+        <state relative-caret-position="162">
+          <caret line="71" column="51" lean-forward="false" selection-start-line="71" selection-start-column="51" selection-end-line="71" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -479,11 +483,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/messages.js">
+    <entry file="file://$PROJECT_DIR$/jquery.emojipicker.a.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="71" column="51" lean-forward="false" selection-start-line="71" selection-start-column="51" selection-end-line="71" selection-end-column="51" />
+        <state relative-caret-position="-1273122">
+          <caret line="0" column="643" lean-forward="false" selection-start-line="0" selection-start-column="643" selection-end-line="0" selection-end-column="643" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/jquery.emojis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-154059">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/jquery.emojipicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="67" column="16" lean-forward="false" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
+          <folding>
+            <marker date="1504994719540" expanded="true" signature="14936:14949" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
