@@ -94,7 +94,15 @@ var startApp = function () {
                                     header: 'templates/common/header.hbs',
                                     footer: 'templates/common/footer.hbs'
                                 }).then(function () {
-                                    this.partial('templates/messages/sendMessage.hbs');
+                                    this.partial('templates/messages/sendMessage.hbs').then(function () {
+                                        $('#msgText').emojiPicker({
+                                            height: '300px',
+                                            width: '450px',
+                                            onShow: function onShow(picker, settings, isActive) {
+                                                $(picker).css('left', '160px');
+                                            }
+                                        });
+                                    });
                                 });
 
                             case 6:
