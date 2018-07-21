@@ -10398,7 +10398,7 @@ if (typeof SVGElement.prototype.contains === 'undefined') {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Dimo\Desktop\github pages\Github-pages-test\src\polyfills.ts */"./src/polyfills.ts");
+module.exports = __webpack_require__(/*! C:\Users\Dimo\Desktop\MbFanatics\example\src\polyfills.ts */"./src/polyfills.ts");
 
 
 /***/ })

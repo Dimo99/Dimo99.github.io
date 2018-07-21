@@ -5811,12 +5811,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main_content_pages_coming_soon_coming_soon_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./main/content/pages/coming-soon/coming-soon.component */ "./src/app/main/content/pages/coming-soon/coming-soon.component.ts");
 /* harmony import */ var _main_content_pages_coming_soon_coming_soon_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./main/content/pages/coming-soon/coming-soon.module */ "./src/app/main/content/pages/coming-soon/coming-soon.module.ts");
 /* harmony import */ var _main_main_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./main/main.module */ "./src/app/main/main.module.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -5840,6 +5842,7 @@ var AppModule = /** @class */ (function () {
                 _main_content_pages_coming_soon_coming_soon_module__WEBPACK_IMPORTED_MODULE_9__["ComingSoonModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpClientModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"].forRoot([
                     { path: "", component: _main_content_pages_coming_soon_coming_soon_component__WEBPACK_IMPORTED_MODULE_8__["FuseComingSoonComponent"] }
                 ]),
@@ -6014,7 +6017,7 @@ var FuseContentModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"coming-soon\" fxLayout=\"column\" fusePerfectScrollbar>\r\n\r\n    <div id=\"coming-soon-form-wrapper\" fxLayout=\"column\" fxLayoutAlign=\"center center\">\r\n\r\n        <div id=\"coming-soon-form\" *fuseIfOnDom [@animate]=\"{value:'*',params:{duration:'300ms',y:'100px'}}\">\r\n\r\n            <div class=\"top\">\r\n\r\n                <div class=\"logo\">\r\n                    <img src=\"assets/images/logos/fuse.svg\">\r\n                </div>\r\n\r\n                <div class=\"title\">Hey! Thank you for checking out our app.</div>\r\n                <div class=\"subtitle\">It’s not quite ready yet, but we are working hard and it will be ready in\r\n                    approximately:\r\n                </div>\r\n\r\n                <fuse-countdown eventDate=\"2019-01-01\"></fuse-countdown>\r\n\r\n            </div>\r\n\r\n            <form name=\"comingSoonForm\" [formGroup]=\"comingSoonForm\" novalidate>\r\n\r\n                <div class=\"message\">\r\n                    If you would like to be notified when the app is ready, you can subscribe to our e-mail list.\r\n                </div>\r\n\r\n                <mat-form-field>\r\n                    <input matInput placeholder=\"Email\" formControlName=\"email\">\r\n                    <mat-error *ngIf=\"comingSoonFormErrors.email.required\">\r\n                        Email is required\r\n                    </mat-error>\r\n                    <mat-error *ngIf=\"!comingSoonFormErrors.email.required && comingSoonFormErrors.email.email\">\r\n                        Please enter a valid email address\r\n                    </mat-error>\r\n                </mat-form-field>\r\n\r\n                <button mat-raised-button color=\"accent\" class=\"subscribe-button\" aria-label=\"SUBSCRIBE\"\r\n                        [disabled]=\"comingSoonForm.invalid\">\r\n                    SUBSCRIBE\r\n                </button>\r\n\r\n            </form>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n</div>"
+module.exports = "<div id=\"coming-soon\" fxLayout=\"column\" fusePerfectScrollbar>\r\n\r\n    <div id=\"coming-soon-form-wrapper\" fxLayout=\"column\" fxLayoutAlign=\"center center\">\r\n\r\n        <div id=\"coming-soon-form\" *fuseIfOnDom [@animate]=\"{value:'*',params:{duration:'300ms',y:'100px'}}\">\r\n\r\n            <div class=\"top\">\r\n\r\n                <div class=\"logo\">\r\n                    <img src=\"assets/images/logos/fuse.svg\">\r\n                </div>\r\n\r\n                <div class=\"title\">Hey! Thank you for checking out our app.</div>\r\n                <div class=\"subtitle\">It’s not quite ready yet, but we are working hard and it will be ready in\r\n                    approximately:\r\n                </div>\r\n\r\n                <fuse-countdown eventDate=\"2019-01-01\"></fuse-countdown>\r\n\r\n            </div>\r\n\r\n            <form *ngIf=\"!subscribed\" name=\"comingSoonForm\" [formGroup]=\"comingSoonForm\" novalidate>\r\n\r\n                <div class=\"message\">\r\n                    If you would like to be notified when the app is ready, you can subscribe to our e-mail list.\r\n                </div>\r\n\r\n                <mat-form-field>\r\n                    <input matInput placeholder=\"Email\" formControlName=\"email\">\r\n                    <mat-error *ngIf=\"comingSoonFormErrors.email.required\">\r\n                        Email is required\r\n                    </mat-error>\r\n                    <mat-error *ngIf=\"!comingSoonFormErrors.email.required && comingSoonFormErrors.email.email\">\r\n                        Please enter a valid email address\r\n                    </mat-error>\r\n                </mat-form-field>\r\n\r\n                <button (click)=\"subscribe()\" mat-raised-button color=\"accent\" class=\"subscribe-button\" aria-label=\"SUBSCRIBE\"\r\n                        [disabled]=\"comingSoonForm.invalid\">\r\n                    SUBSCRIBE\r\n                </button>\r\n\r\n            </form>\r\n            <div *ngIf=\"subscribed\" class=\"top\">\r\n                <div class=\"title\">\r\n                    Thank you for subscribing to our app you will be notified when the app is ready.\r\n                </div>\r\n            </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n</div>"
 
 /***/ }),
 
@@ -6025,7 +6028,7 @@ module.exports = "<div id=\"coming-soon\" fxLayout=\"column\" fusePerfectScrollb
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\n:host #coming-soon {\n  width: 100%;\n  overflow: auto;\n  background: url(\"/assets/images/backgrounds/dark-material-bg.jpg\") no-repeat;\n  background-size: cover; }\n:host #coming-soon #coming-soon-form-wrapper {\n    flex: 1 0 auto;\n    padding: 32px; }\n@media screen and (max-width: 599px) {\n      :host #coming-soon #coming-soon-form-wrapper {\n        padding: 16px; } }\n:host #coming-soon #coming-soon-form-wrapper #coming-soon-form {\n      width: 384px;\n      max-width: 384px;\n      background: #FFFFFF;\n      text-align: center;\n      box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12); }\n@media screen and (max-width: 599px) {\n        :host #coming-soon #coming-soon-form-wrapper #coming-soon-form {\n          width: 100%; } }\n:host #coming-soon #coming-soon-form-wrapper #coming-soon-form .top {\n        width: 100%;\n        padding: 32px; }\n@media screen and (max-width: 599px) {\n          :host #coming-soon #coming-soon-form-wrapper #coming-soon-form .top {\n            padding: 24px; } }\n:host #coming-soon #coming-soon-form-wrapper #coming-soon-form .top .logo {\n          width: 128px;\n          margin: 32px auto; }\n:host #coming-soon #coming-soon-form-wrapper #coming-soon-form .top .title {\n          font-size: 17px;\n          margin-top: 16px; }\n:host #coming-soon #coming-soon-form-wrapper #coming-soon-form .top .subtitle {\n          margin: 16px auto 0 auto;\n          text-align: center;\n          max-width: 300px;\n          color: rgba(0, 0, 0, 0.54);\n          font-size: 15px; }\n:host #coming-soon #coming-soon-form-wrapper #coming-soon-form .top fuse-countdown {\n          margin: 48px auto 16px auto; }\n:host #coming-soon #coming-soon-form-wrapper #coming-soon-form form {\n        width: 100%;\n        padding: 32px;\n        text-align: center;\n        background: whitesmoke; }\n:host #coming-soon #coming-soon-form-wrapper #coming-soon-form form .message {\n          font-weight: 500;\n          margin: 8px auto 32px auto; }\n:host #coming-soon #coming-soon-form-wrapper #coming-soon-form form mat-form-field {\n          width: 320px;\n          margin: 8px auto 16px auto; }\n:host #coming-soon #coming-soon-form-wrapper #coming-soon-form form .subscribe-button {\n          width: 220px;\n          margin: 16px auto; }\n@media screen and (max-width: 599px) {\n            :host #coming-soon #coming-soon-form-wrapper #coming-soon-form form .subscribe-button {\n              width: 90%; } }\n"
+module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\n:host #coming-soon {\n  width: 100%;\n  overflow: auto;\n  background: url(\"/assets/images/backgrounds/dark-material-bg.jpg\") no-repeat;\n  background-size: cover; }\n:host #coming-soon #coming-soon-form-wrapper {\n    flex: 1 0 auto;\n    padding: 32px; }\n@media screen and (max-width: 599px) {\n      :host #coming-soon #coming-soon-form-wrapper {\n        padding: 16px; } }\n:host #coming-soon #coming-soon-form-wrapper #coming-soon-form {\n      width: 384px;\n      max-width: 384px;\n      background: #FFFFFF;\n      text-align: center;\n      box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12); }\n@media screen and (max-width: 599px) {\n        :host #coming-soon #coming-soon-form-wrapper #coming-soon-form {\n          width: 100%; } }\n:host #coming-soon #coming-soon-form-wrapper #coming-soon-form .top {\n        width: 100%;\n        padding: 32px; }\n@media screen and (max-width: 599px) {\n          :host #coming-soon #coming-soon-form-wrapper #coming-soon-form .top {\n            padding: 24px; } }\n:host #coming-soon #coming-soon-form-wrapper #coming-soon-form .top .logo {\n          width: 128px;\n          margin: 32px auto; }\n:host #coming-soon #coming-soon-form-wrapper #coming-soon-form .top .title {\n          font-size: 17px;\n          margin-top: 16px; }\n:host #coming-soon #coming-soon-form-wrapper #coming-soon-form .top .subtitle {\n          margin: 16px auto 0 auto;\n          text-align: center;\n          max-width: 300px;\n          color: rgba(0, 0, 0, 0.54);\n          font-size: 15px; }\n:host #coming-soon #coming-soon-form-wrapper #coming-soon-form .top fuse-countdown {\n          margin: 48px auto 16px auto; }\n:host #coming-soon #coming-soon-form-wrapper #coming-soon-form form {\n        width: 100%;\n        padding: 32px;\n        text-align: center;\n        background: whitesmoke; }\n:host #coming-soon #coming-soon-form-wrapper #coming-soon-form form .message {\n          font-weight: 500;\n          margin: 8px auto 32px auto; }\n:host #coming-soon #coming-soon-form-wrapper #coming-soon-form form mat-form-field {\n          width: 100%;\n          margin: 8px auto 16px auto; }\n:host #coming-soon #coming-soon-form-wrapper #coming-soon-form form .subscribe-button {\n          width: 220px;\n          margin: 16px auto; }\n@media screen and (max-width: 599px) {\n            :host #coming-soon #coming-soon-form-wrapper #coming-soon-form form .subscribe-button {\n              width: 90%; } }\n"
 
 /***/ }),
 
@@ -6043,6 +6046,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _fuse_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fuse/services/config.service */ "./src/@fuse/services/config.service.ts");
 /* harmony import */ var _fuse_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fuse/animations */ "./src/@fuse/animations/index.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6056,10 +6060,13 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var FuseComingSoonComponent = /** @class */ (function () {
-    function FuseComingSoonComponent(fuseConfig, formBuilder) {
+    function FuseComingSoonComponent(fuseConfig, formBuilder, http) {
         this.fuseConfig = fuseConfig;
         this.formBuilder = formBuilder;
+        this.http = http;
+        this.subscribed = false;
         this.fuseConfig.setConfig({
             layout: {
                 navigation: 'none',
@@ -6073,6 +6080,7 @@ var FuseComingSoonComponent = /** @class */ (function () {
     }
     FuseComingSoonComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.subscribed = localStorage.getItem('subscribed') == 'true';
         this.comingSoonForm = this.formBuilder.group({
             email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].email]]
         });
@@ -6094,6 +6102,31 @@ var FuseComingSoonComponent = /** @class */ (function () {
             }
         }
     };
+    FuseComingSoonComponent.prototype.subscribe = function () {
+        var _this = this;
+        var email = this.comingSoonForm.get('email').value;
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpHeaders"]({
+            'Authorization': 'Basic RW1haWxQb3N0VXNlcjpFbWFpbFBvc3RVc2Vy',
+            'Content-Type': 'application/json'
+        });
+        console.log(headers);
+        this.http.get("https://baas.kinvey.com/appdata/kid_H1QReKgV7/Emails?query={\"email\":\"" + email + "\"}", { headers: headers })
+            .subscribe(function (result) {
+            var response = result;
+            if (result.length != 0) {
+                _this.subscribed = true;
+                localStorage.setItem('subscribed', 'true');
+            }
+            else {
+                _this.http.post('https://baas.kinvey.com/appdata/kid_H1QReKgV7/Emails', {
+                    email: email
+                }, { headers: headers }).subscribe(function (result) {
+                    _this.subscribed = true;
+                    localStorage.setItem('subscribed', 'true');
+                });
+            }
+        });
+    };
     FuseComingSoonComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'coming-soon',
@@ -6102,7 +6135,8 @@ var FuseComingSoonComponent = /** @class */ (function () {
             animations: _fuse_animations__WEBPACK_IMPORTED_MODULE_3__["fuseAnimations"]
         }),
         __metadata("design:paramtypes", [_fuse_services_config_service__WEBPACK_IMPORTED_MODULE_2__["FuseConfigService"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]])
+            _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"]])
     ], FuseComingSoonComponent);
     return FuseComingSoonComponent;
 }());
@@ -6357,7 +6391,7 @@ bootstrap();
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Dimo\Desktop\github pages\Github-pages-test\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Dimo\Desktop\MbFanatics\example\src\main.ts */"./src/main.ts");
 
 
 /***/ })
