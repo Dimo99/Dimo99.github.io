@@ -6104,28 +6104,31 @@ var FuseComingSoonComponent = /** @class */ (function () {
     };
     FuseComingSoonComponent.prototype.subscribe = function () {
         var _this = this;
-        var email = this.comingSoonForm.get('email').value;
-        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpHeaders"]({
-            'Authorization': 'Basic RW1haWxQb3N0VXNlcjpFbWFpbFBvc3RVc2Vy',
-            'Content-Type': 'application/json'
-        });
-        console.log(headers);
-        this.http.get("https://baas.kinvey.com/appdata/kid_H1QReKgV7/Emails?query={\"email\":\"" + email + "\"}", { headers: headers })
-            .subscribe(function (result) {
-            var response = result;
-            if (result.length != 0) {
-                _this.subscribed = true;
-                localStorage.setItem('subscribed', 'true');
-            }
-            else {
-                _this.http.post('https://baas.kinvey.com/appdata/kid_H1QReKgV7/Emails', {
-                    email: email
-                }, { headers: headers }).subscribe(function (result) {
+        if (!this.subscribed) {
+            this.subscribed = true;
+            var email_1 = this.comingSoonForm.get('email').value;
+            var headers_1 = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpHeaders"]({
+                'Authorization': 'Basic RW1haWxQb3N0VXNlcjpFbWFpbFBvc3RVc2Vy',
+                'Content-Type': 'application/json'
+            });
+            console.log(headers_1);
+            this.http.get("https://baas.kinvey.com/appdata/kid_H1QReKgV7/Emails?query={\"email\":\"" + email_1 + "\"}", { headers: headers_1 })
+                .subscribe(function (result) {
+                var response = result;
+                if (result.length != 0) {
                     _this.subscribed = true;
                     localStorage.setItem('subscribed', 'true');
-                });
-            }
-        });
+                }
+                else {
+                    _this.http.post('https://baas.kinvey.com/appdata/kid_H1QReKgV7/Emails', {
+                        email: email_1
+                    }, { headers: headers_1 }).subscribe(function (result) {
+                        _this.subscribed = true;
+                        localStorage.setItem('subscribed', 'true');
+                    });
+                }
+            });
+        }
     };
     FuseComingSoonComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
