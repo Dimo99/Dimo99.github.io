@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Click To Read</title>
+    <link href="./img/icon/ebook_icon.png" rel="icon" type="icon/png">
+</head>
+
+<body>
+
+    <div class="w3-custom-container">
+        <p style="position: relative; top:200px; font-size:64px; text-align: center;"><span
+                style="margin-right: 30px;">Един момент</span><i class="fa fa-spinner w3-spin"></i></p>
+    </div>
+
+    <script>
+        setTimeout(move, 3000);
+        function move() {
+            let a = document.createElement('a');
+            a.href = "../mainPanel/searchPageLogin.html";
+            a.click();
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="../css/payment.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<title>Click To Read</title>
+
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="../img/icon/ebook_icon.png" rel="icon" type="icon/png">
+
+</head>
+
+<body>
+
+    <div class="w3-bar w3-black w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
+            href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i
+                class="fa fa-bars"></i></a>
+        <a href="../waitPanels/waitHomeLogin.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-amber">Начало</a>
+        <a href="../waitPanels/waitSubsciptiion.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-amber">Абонамент</a>
+        <a href="../waitPanels/waitPanelSearchLogIn.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-amber">Търсене</a>
+
+
+        <a id="button" class="w3-padding-large w3-hover-amber w3-hide-small w3-right w3-button"><i
+                class="fa fa-search"></i></a>
+
+        <input id="myInput" type="text"
+            class="w3-bar-item w3-input w3-white w3-mobile w3-right w3-padding-large w3-hide-small"
+            placeholder="Search..">
+
+        <script src="../js/search.js"></script>
+
+    </div>
+
+    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium">
+        <a  href="../waitPanels/waitHomeLogin.html" class="w3-bar-item w3-button w3-padding-large w3-hover-amber" onclick="myFunction()">Начало</a>
+        <a  href="../waitPanels/waitSubsciptiion.html" class="w3-bar-item w3-button w3-padding-large w3-hover-amber" onclick="myFunction()">Абонамент</a>
+        <a href="../waitPanels/waitPanelSearchLogIn.html" class="w3-bar-item w3-button w3-padding-large w3-hover-amber" onclick="myFunction()">Търсене</a>
+    </div>
+
+    <main>
+    <div class="custom-container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4 col-10 offset-1 pl-0 pr-0">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-5 col-12 pt-2">
+                                <h6 class="m-0"><strong>Информация за плащането</strong></h6>
+                            </div>
+                            <div class="col-md-7 col-12 icons">
+                                <i class="fa fa-cc-visa fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-cc-mastercard fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-cc-discover fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-cc-amex fa-2x" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="validationTooltipCardNumber"><strong>НОМЕР НА КАРТА</strong></label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control border-right-0" id="validationTooltipCardNumber" placeholder="Номер на карта">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text rounded-right" id="validationTooltipCardNumber"><i class="fa fa-credit-card"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 col-12">
+                                    <div class="form-group">
+                                        <label for="exampleInputExpirationDate"><strong>Валидна до</strong></label>
+                                        <input type="text" class="form-control" id="exampleInputExpirationDate" placeholder="MM / YY">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-12">
+                                    <div class="form-group">
+                                        <label for="exampleInputCvcCode"><strong>CVV2</strong></label>
+                                        <input type="text" class="form-control" id="exampleInputCvcCode" placeholder="CVV2">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-info w-100 pb-2 pt-2">Плащането</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </main>
+
+    <script src="../js/myScript.js"></script>
+
+    </body>
+
+</html>

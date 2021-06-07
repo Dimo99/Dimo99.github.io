@@ -1,0 +1,5 @@
+.content {
+    position: relative;
+    top: calc(100vh - 520px);
+    width: 95%;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" type="text/css" href="../css/login.css" />
+
+        <title>Регистрация - Click To Read</title>
+        <link href="../img/icon/ebook_icon.png" rel="icon" type="icon/png">
+    </head>
+
+    <body>
+        <div id="scroll-wrap" class="custom-container">
+            <!-- Navigation bar -->
+            <div class="custom-navbar">
+                <div class="w3-bar w3-black w3-card">
+                    <a href="../waitPanels/waitHome.html"
+                        class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-amber">
+                        Начало
+                    </a>
+
+                    <a href="../waitPanels/waitPanelLogin.html"
+                        class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-amber">
+                        Ваучери
+                    </a>
+
+                    <a href="../waitPanels/waitPanelSearch.html"
+                        class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-amber">
+                        Търсене
+                    </a>
+
+                    <a id="button"
+                        class="w3-padding-large w3-hover-amber w3-hide-small w3-right w3-button">
+                        <i class="fa fa-search">
+                        </i>
+                    </a>
+
+                    <input id="myInput"
+                        type="text"
+                        class="w3-bar-item w3-input w3-white w3-mobile w3-right w3-padding-large w3-hide-small"
+                        placeholder="Search..">
+                    <script src="../js/search.js"></script>
+                </div>
+            </div>
+
+            <!-- View Controller -->
+            <div class="main">
+                <div id="panel">
+                    <div class="loginBanner">
+                        <img src="../img/welcome.png" alt="Banner">
+                    </div>
+                    <div class="loginForm">   
+                        <h1>Регистрация</h1>
+                        <form>
+                            <input type="text" id="username" name="username" placeholder="Потребителско име">
+                            <br>
+                            <input type="password" id="password" name="password" placeholder="Парола">
+                            <br>
+                            <input type="password" id="repassword" name="repassword" placeholder="Повторете парола">
+                            <br>
+                            <input type="text" id="email" name="email" placeholder="Имейл адрес">
+                            <br>
+                            <button type="button" onclick="registerButtonTapped()" id="registerButton" class="w3-button w3-khaki w3-hover-amber w3-border w3-round-large">Регистрация</button>
+                        </form>
+                        <p style="margin-top: 5%;">Вече имате профил? <a href="login.html">Вход!</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function registerButtonTapped() {
+                const username = String(document.getElementById('username').value);
+                const password = String(document.getElementById('password').value);
+                const repassword = String(document.getElementById('repassword').value);
+                const email = String(document.getElementById('email').value);
+                if (username.length < 6) {
+                    alert("Невалидно потребителско име");
+                    return false;
+                } else if (password.length < 6) {
+                    alert("Слаба парола");
+                    return false;
+
+                } else if ( password != repassword) {
+                    alert("Паролите не съвпадат");
+                    return false;
+                
+                } else if (!(email.includes("@") && email.includes("."))) {
+                    alert("Невалиден имейл адрес");
+                    return false;
+                } else {
+                    let users = JSON.parse(localStorage.getItem('users'));
+                    if(users.some(x=>x.username == username)){
+                        alert("Заето потребителско име");
+                        return false;
+                    }
+                    users.push({username: username, password: password});
+                    localStorage.setItem('users', JSON.stringify(users));
+                    window.location.href = "indexLogin.html"
+                    //valid everything - chekc if user email & username are in file if not register else show another alert
+                }
+            }
+        </script> 
+    </body>
+</html>

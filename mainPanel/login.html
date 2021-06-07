@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css" />
+
+    <title>Вход - Click To Read</title>
+    <link href="../img/icon/ebook_icon.png" rel="icon" type="icon/png">
+</head>
+
+<body>
+    <div id="scroll-wrap" class="custom-container">
+        <!-- Navigation bar -->
+        <div class="custom-navbar">
+            <div class="w3-bar w3-black w3-card">
+                <a href="../waitPanels/waitHome.html"
+                    class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-amber">
+                    Начало
+                </a>
+
+                <a href="../waitPanels/waitPanelLogin.html"
+                    class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-amber">
+                    Абонамент
+                </a>
+
+                <a href="../waitPanels/waitPanelSearch.html"
+                    class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-amber">
+                    Търсене
+                </a>
+
+                <a id="button" class="w3-padding-large w3-hover-amber w3-hide-small w3-right w3-button">
+                    <i class="fa fa-search">
+                    </i>
+                </a>
+
+                <input id="myInput" type="text"
+                    class="w3-bar-item w3-input w3-white w3-mobile w3-right w3-padding-large w3-hide-small"
+                    placeholder="Search..">
+                <script src="../js/search.js"></script>
+            </div>
+        </div>
+
+        <!-- View Controller -->
+        <div class="main">
+            <div id="panel">
+                <div class="loginBanner">
+                    <img src="../img/welcome.png" alt="Banner">
+                </div>
+                <div class="loginForm">
+                    <h1>Вход</h1>
+                    <form>
+                        <input type="text" id="username" name="username" placeholder="Потребителско име">
+                        <br><br>
+                        <input type="password" id="password" name="password" placeholder="Парола">
+                        <br><br>
+                        <button type="button" onclick="loginButtonTapped()" id="loginButton"
+                            class="w3-button w3-khaki w3-hover-amber w3-border w3-round-large">Вход</button>
+                    </form>
+                    <p style="margin-top: 5%;">Нямате профил? <a href="registration.html">Регистрация!</a></p>
+                    <p style="margin-top: 5%;">Забравихте паролата си? Натиснете <a href="index.html">тук!</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        if (localStorage.getItem('users') == null) {
+            localStorage.setItem('users', JSON.stringify([{ username: 'admin', password: 'admin' }]));
+        }
+
+        function loginButtonTapped() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username == "" || password == "") {
+                alert("Невалидно потребителско име или парола!");
+                return false;
+            } else {
+                let users = JSON.parse(localStorage.getItem('users'));
+                if (users.some(u => u.username == username && u.password == password)) {
+                    window.location.href = "indexLogin.html"
+                    return true;
+                } else
+                    alert("Грешно потребителско име или парола!");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
